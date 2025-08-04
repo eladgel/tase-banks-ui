@@ -9,7 +9,10 @@ export default function BankLogoGrid() {
   if (error) return <p className="text-red-600">Error: {error}</p>;
 
   return (
-    <div dir="rtl" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+    <div
+      dir="rtl"
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4"
+    >
       {data.map((bank) => (
         <div
           key={bank.code}

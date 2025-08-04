@@ -16,6 +16,7 @@ export async function GET(_req: NextRequest) {
     } as any);
 
     if (!res.ok) {
+      console.log(res);
       return NextResponse.json(
         { error: `TASE responded ${res.status}` },
         { status: 502 }
