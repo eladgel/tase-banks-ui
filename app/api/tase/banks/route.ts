@@ -13,7 +13,7 @@ export async function GET(_req: NextRequest) {
       },
       // revalidate once a week – tweak to taste
       next: { revalidate: 60 * 60 * 24 * 7 },
-    });
+    } as any);
 
     if (!res.ok) {
       return NextResponse.json(
