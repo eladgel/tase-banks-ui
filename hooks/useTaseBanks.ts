@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 export type TaseBank = {
   code: string;
   name: string;
-  logo: string;
 };
 
 export function useTaseBanks() {

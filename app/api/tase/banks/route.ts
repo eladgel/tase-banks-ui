@@ -23,16 +23,12 @@ export async function GET(_req: NextRequest) {
     }
 
     const json = await res.json();
-    const list =
-      json.data /* typical key */ ?? json.memberList /* rare fallback */ ?? [];
+    const list = json.defaultCommissionData ?? [];
 
-    const banks = list
-      .filter((m: any) => m.IsBank)
-      .map((m: any) => ({
-        code: String(m.MemberCode),
-        name: m.BankCompanyName.trim(),
-        logo: `${ORIGIN}${m.BankCompanyThumbnailUrl}`,
-      }));
+    const banks = list.map((m: any) => ({
+      code: String(m.MemberId),
+      name: m.MemberDesc.trim(),
+    }));
 
     return NextResponse.json(banks, { status: 200 });
   } catch (err) {
