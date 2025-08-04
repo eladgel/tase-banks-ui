@@ -1,3 +1,5 @@
+"use client";
+
 import { BankLogo } from "./BankLogo";
 import { useTaseBanks } from "../hooks/useTaseBanks";
 
